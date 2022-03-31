@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "IBM Plex Mono", monospace;
+  height: 100%;
+  color: white;
+  background-color: #090909;
+}
+
+p {
+  text-align: center;
+  background-color: #121212;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    lime,
+    cyan,
+    violet
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.sticky-footer {
+  background-color: #121212;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+.sticky-header {
+  background-color: #121212;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lgbt {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 32px;
+  letter-spacing: 5px;
+}
+
+.lgbt-animated {
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    lime,
+    cyan,
+    violet
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+@keyframes rainbow {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+}
