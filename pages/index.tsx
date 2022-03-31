@@ -14,14 +14,40 @@ const Home: NextPage = () => {
       <main>
         <div className="sticky-header">
           <div className="header">
-            <h1 style={{fontWeight: "lighter"}}>loli.</h1>
+            <h1 style={{ fontWeight: "lighter" }}>loli.</h1>
             <h1 className="lgbt lgbt-animated">lgbt</h1>
           </div>
-          <p style={{marginTop: "-20px"}}><em>The <strong>serious</strong> URL shortener.</em></p>
+          <p style={{ marginTop: "-20px" }}>
+            <em>
+              The <strong>serious</strong> URL shortener.
+            </em>
+          </p>
+        </div>
+
+        <div className="content">
+          <form action="/create-url" method="POST">
+            <div className="url-form-input-outer">
+              <input
+                className="url-form-input"
+                type="url"
+                autoComplete="off"
+                placeholder="Paste a URL"
+                name="link-url"
+              />
+            </div>
+            {/* <label for="url">Name</label>
+            <input id="url" type="text" required />
+            <button type="submit">Create</button> */}
+          </form>
         </div>
 
         <div className="sticky-footer">
-          <p>Made without &lt;3 by <a href="https://github.com/Steviegt6/">Tomat</a> | Fully open-source on <a href="https://github.com/Steviegt6/loli/">GitHub</a></p>
+          <p>
+            Made without &lt;3 by{" "}
+            <a href="https://github.com/Steviegt6/">Tomat</a> | Fully
+            open-source on{" "}
+            <a href="https://github.com/Steviegt6/loli/">GitHub</a>
+          </p>
         </div>
       </main>
     </div>
