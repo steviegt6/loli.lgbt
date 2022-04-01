@@ -7,7 +7,7 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>loli.lgbt</title>
-        <meta content="loli.lgbt - *The* ***serious*** *URl shortener.*" property="og:title" />
+        <meta content="loli.lgbt - The serious URl shortener." property="og:title" />
         <meta content="Shorten links and get put on an F.B.I. watchlist while you're at it." property="og:description" />
         <meta content="https://loli.lgbt/" property="og:url" />
         <meta content="#FF0000" data-react-helmet="true" name="theme-color" />
