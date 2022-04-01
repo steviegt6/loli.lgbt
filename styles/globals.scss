@@ -16,6 +16,14 @@ p {
 }
 
 a {
+  color: paleturquoise;
+  text-decoration: none;
+
+  // TODO: Since we set color to transparent in :hover, it flashes when it resets. :(
+  transition: color 0.5s ease-in-out;
+}
+
+a:hover {
   background: linear-gradient(
     to right,
     red,
