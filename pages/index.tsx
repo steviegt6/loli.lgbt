@@ -7,11 +7,20 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>loli.lgbt</title>
-        <meta content="loli.lgbt - The serious URl shortener." property="og:title" />
-        <meta content="Shorten links and get put on an F.B.I. watchlist while you're at it." property="og:description" />
+        <meta
+          content="loli.lgbt - The serious URL shortener."
+          property="og:title"
+        />
+        <meta
+          content="Shorten links and get put on an F.B.I. watchlist while you're at it."
+          property="og:description"
+        />
         <meta content="https://loli.lgbt/" property="og:url" />
         <meta content="#FF0000" data-react-helmet="true" name="theme-color" />
-        <meta name="description" content="Shorten links and get put on an F.B.I. watchlist while you're at it." />
+        <meta
+          name="description"
+          content="Shorten links and get put on an F.B.I. watchlist while you're at it."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -39,6 +48,35 @@ const Home: NextPage = () => {
                 name="link-url"
               />
             </div>
+            <br />
+            <div style={{ float: "left" }}>
+              <p className="dropdown-header">URL Type</p>
+              <select name="url-mode" className="dropdown">
+                <option value="alphanumeric">Alphanumeric (A-Za-z0-9)</option>
+                <option value="test">Gfycat Word List</option>
+                <option value="test">Zero-Width Spaces</option>
+              </select>
+            </div>
+
+            <div style={{ float: "right" }}>
+              <p className="dropdown-header">Custom URL</p>
+              <input
+                className="dropdown"
+                type="custom-url"
+                autoComplete="off"
+                placeholder="Enter custom URL"
+                name="custom-link-url"
+              />
+            </div>
+            <br />
+            <br />
+            <br />
+            <p className="info">
+              <em>
+                Setting a value for &quot;Custom URL&quot; will cause the
+                setting &quot;URL Type&quot; to be ignored!
+              </em>
+            </p>
             {/* <label for="url">Name</label>
             <input id="url" type="text" required />
             <button type="submit">Create</button> */}
