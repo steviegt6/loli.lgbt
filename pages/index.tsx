@@ -38,59 +38,54 @@ const Home: NextPage = () => {
         </div>
 
         <div className="content">
-          <form action="/create-url" method="POST">
-            <div className="url-form-input-outer">
-              <input
-                className="url-form-input"
-                type="url"
-                autoComplete="off"
-                placeholder="Paste a URL"
-                name="link-url"
-              />
-            </div>
-            <br />
-            <div style={{ float: "left" }}>
-              <p className="dropdown-header">URL Type</p>
-              <select name="url-mode" className="dropdown">
-                <option value="alphanumeric">Alphanumeric (A-Za-z0-9)</option>
-                <option value="test">Gfycat Word List</option>
-                <option value="test">Zero-Width Spaces</option>
-              </select>
-            </div>
+          <div className="url-form-input-outer">
+            <input
+              className="url-form-input"
+              type="url"
+              autoComplete="off"
+              placeholder="Paste a URL"
+              name="link-url"
+            />
+          </div>
+          <br />
+          <div style={{ float: "left" }}>
+            <p className="dropdown-header">URL Type</p>
+            <select name="url-mode" className="dropdown">
+              <option value="alphanumeric">Alphanumeric (A-Za-z0-9)</option>
+              <option value="test">Gfycat Word List</option>
+              <option value="test">Zero-Width Spaces</option>
+            </select>
+          </div>
 
-            <div style={{ float: "right" }}>
-              <p className="dropdown-header">Custom URL</p>
-              <input
-                className="dropdown"
-                type="custom-url"
-                autoComplete="off"
-                placeholder="your-custom-url"
-                name="custom-link-url"
-              />
-            </div>
-            <br />
-            <br />
-            <br />
-            <p className="info">
-              <em>
-                Setting a value for &quot;Custom URL&quot; will cause the
-                setting &quot;URL Type&quot; to be ignored!
-              </em>
-            </p>
-            {/* <label for="url">Name</label>
-            <input id="url" type="text" required />
-            <button type="submit">Create</button> */}
-          </form>
+          <div style={{ float: "right" }}>
+            <p className="dropdown-header">Custom URL</p>
+            <input
+              className="dropdown"
+              type="custom-url"
+              autoComplete="off"
+              placeholder="your-custom-url"
+              name="custom-link-url"
+            />
+          </div>
+          <br />
+          <br />
+          <br />
+          <p className="info">
+            <em>
+              Setting a value for &quot;Custom URL&quot; will cause the setting
+              &quot;URL Type&quot; to be ignored!
+            </em>
+          </p>
         </div>
 
         <div className="sticky-footer">
           <p>Made with</p>
-          <p style={{color: "indianred"}}>&nbsp;&lt;</p>
-          <p style={{color: "slategray"}}>/</p>
-          <p style={{color: "indianred"}}>3&nbsp;</p>
+          <p style={{ color: "indianred" }}>&nbsp;&lt;</p>
+          <p style={{ color: "slategray" }}>/</p>
+          <p style={{ color: "indianred" }}>3&nbsp;</p>
           <p>
-            by <a href="https://github.com/Steviegt6/">Tomat</a> | Open source on{" "}
-            <a href="https://github.com/Steviegt6/loli/">GitHub</a>
+            by <a href="https://github.com/Steviegt6/">Tomat</a> | Open source
+            on <a href="https://github.com/Steviegt6/loli/">GitHub</a>
           </p>
         </div>
       </main>
