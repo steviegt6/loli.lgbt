@@ -64,7 +64,7 @@ const Home: NextPage = () => {
                 className="dropdown"
                 type="custom-url"
                 autoComplete="off"
-                placeholder="Enter custom URL"
+                placeholder="your-custom-url"
                 name="custom-link-url"
               />
             </div>
