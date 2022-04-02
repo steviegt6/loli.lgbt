@@ -84,10 +84,12 @@ const Home: NextPage = () => {
         </div>
 
         <div className="sticky-footer">
+          <p>Made with</p>
+          <p style={{color: "indianred"}}>&nbsp;&lt;</p>
+          <p style={{color: "slategray"}}>/</p>
+          <p style={{color: "indianred"}}>3&nbsp;</p>
           <p>
-            Made without &lt;3 by{" "}
-            <a href="https://github.com/Steviegt6/">Tomat</a> | Fully
-            open-source on{" "}
+            by <a href="https://github.com/Steviegt6/">Tomat</a> | Open source on{" "}
             <a href="https://github.com/Steviegt6/loli/">GitHub</a>
           </p>
         </div>
