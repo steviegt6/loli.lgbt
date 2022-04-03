@@ -54,7 +54,7 @@ export default function handler(
     return;
   }
 
-  if (url === null) {
+  if (url == "") {
     url = urlReq.customUrl;
   }
 
