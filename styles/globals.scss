@@ -146,6 +146,7 @@ a:hover {
   background-clip: padding-box;
   animation: rainbow 4s ease-in-out infinite;
   background-size: 400% 100%;
+  margin-bottom: 18px;
 }
 
 .dropdown-header {
@@ -167,8 +168,31 @@ a:hover {
 }
 
 .info {
+  margin-top: 2px;
   background-color: transparent;
-  color: #545454;
+  color: #454545;
+
+  transition: color 0.5s ease-in-out;
+}
+
+.info:hover {
+  color: #959595;
+}
+
+.lighter-text {
+  font-weight: lighter;
+}
+
+.sub-text {
+  margin-top: -20px;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
 }
 
 @keyframes rainbow {
