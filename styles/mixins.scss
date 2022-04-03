@@ -1,5 +1,14 @@
 @import "colors";
 
+// Simple mixin for stickying elements. Does not hoist to the top or bottom.
+@mixin stickied-element {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+// Simple mixin for providing rainbow text using background clipping.
 @mixin rainbow-text {
   background: $rainbow-gradient;
   -webkit-background-clip: text;

@@ -34,24 +34,20 @@ a:hover {
 }
 
 .sticky-footer {
-  background-color: $stickied-color;
-  position: fixed;
-  right: 0;
-  left: 0;
+  @include stickied-element;
   bottom: 0;
-  z-index: 999;
+
+  background-color: $stickied-color;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .sticky-header {
-  background-color: $stickied-color;
-  position: fixed;
-  right: 0;
-  left: 0;
+  @include stickied-element;
   top: 0;
-  z-index: 999;
+
+  background-color: $stickied-color;
 }
 
 .header {
@@ -104,7 +100,9 @@ a:hover {
 
 .url-form-input-outer {
   @include rainbow-text;
-  
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+
   border-radius: 15px;
   width: 350px;
   height: 50px;
