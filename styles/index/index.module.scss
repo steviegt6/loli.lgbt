@@ -42,6 +42,9 @@
   width: $expected-width;
   height: 50px;
   margin-bottom: 18px;
+
+  // Hacky fix to prevent urlFromInput from revealing the rainbow background when the window size changes.
+  transition: width ease-in-out 0.3s;
 }
 
 .dropdownHeader {
