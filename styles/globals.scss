@@ -1,142 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
-@import "colors";
-@import "mixins";
-
-// TODO: Rushed project, clean up (S)CCS some time.
+@import "colors.scss";
+@import "mixins.scss";
+@import "links.globals.scss";
+@import "lgbt.globals.scss";
+@import "sticky.globals.scss";
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "IBM Plex Mono", monospace;
   height: 100%;
+
   color: $text-color;
   background-color: $background-color;
+
+  font-family: "IBM Plex Mono", monospace;
   text-align: center;
-}
-
-a {
-  @include rainbow-text;
-
-  color: paleturquoise;
-  text-decoration: none;
-
-  // TODO: Since we set color to transparent in :hover, it flashes when it resets. :(
-  transition: color 0.5s ease-in-out;
-}
-
-a:hover {
-  color: transparent;
 }
 
 * {
   box-sizing: border-box;
 }
 
-.sticky-footer {
-  @include stickied-element;
-  bottom: 0;
-
-  background-color: $stickied-color;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sticky-header {
-  @include stickied-element;
-  top: 0;
-
-  background-color: $stickied-color;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lgbt {
-  text-align: center;
-  text-decoration: underline;
-  font-size: 32px;
-  letter-spacing: 5px;
-}
-
-.lgbt-animated {
-  @include rainbow-text;
+.flex {
+  @include flex-display;
 }
 
 .content {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  @include fixed-center;
+  
   max-width: 350px;
-}
-
-.url-form-input {
-  margin-bottom: 10px;
-  width: 350px;
-  height: 50px;
-  color: white;
-  background-color: $input-background-color;
-  border: 1px solid $input-border-color;
-  border-radius: 15px;
-  outline: 0;
-  padding-left: 10px;
-  padding-right: 10px;
-
-  transition: all ease-in-out 0.3s;
-}
-
-.url-form-input:focus {
-  margin: 5px;
-
-  // 10 pixel difference
-  width: 340px;
-  height: 40px;
-}
-
-.url-form-input-outer {
-  @include rainbow-text;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-
-  border-radius: 15px;
-  width: 350px;
-  height: 50px;
-  margin-bottom: 18px;
-}
-
-.dropdown-header {
-  background-color: transparent;
-  margin-top: -2px;
-  margin-bottom: 4px;
-}
-
-.dropdown {
-  width: 170px;
-  height: 35px;
-  color: white;
-  background-color: $input-background-color;
-  border: 1px solid $input-border-color;
-  border-radius: 6px;
-  outline: 0;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.info {
-  margin-top: 2px;
-  background-color: transparent;
-  color: $unhovered-info-text;
-
-  transition: color 0.5s ease-in-out;
-}
-
-.info:hover {
-  color: $hovered-info-text;
 }
 
 .lighter-text {
@@ -145,12 +38,4 @@ a:hover {
 
 .sub-text {
   margin-top: -20px;
-}
-
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
 }

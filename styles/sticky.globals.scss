@@ -1,0 +1,19 @@
+@import "mixins.scss";
+
+// Global styling for hoisted sticky elements.
+
+.sticky-header {
+  @include stickied-element;
+  top: 0;
+
+  background-color: $stickied-color;
+}
+
+.sticky-footer {
+    @include stickied-element;
+    bottom: 0;
+
+    @include flex-display;
+  
+    background-color: $stickied-color;
+  }

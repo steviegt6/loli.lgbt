@@ -26,7 +26,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main>
         {/* HEADER SHARED BY ALL PAGES */}
         <div className="sticky-header">
-          <div className="header">
+          <div className="flex">
             <h1 className="lighter-text">loli.</h1>
             <h1 className="lgbt lgbt-animated">lgbt</h1>
           </div>

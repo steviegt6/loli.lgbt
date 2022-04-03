@@ -1,0 +1,14 @@
+@import "mixins.scss";
+
+// Provides global styling for "lgbt" elements.
+
+.lgbt {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 32px;
+  letter-spacing: 5px;
+}
+
+.lgbt-animated {
+  @include rainbow-text;
+}

@@ -1,0 +1,16 @@
+@import "colors.scss";
+@import "mixins.scss";
+
+// Global styling for links. $link-color when not hovered, rainbow when hovered.
+
+a {
+  @include rainbow-text;
+  color: $link-color;
+  transition: color 0.5s ease-in-out;
+
+  text-decoration: none;
+}
+
+a:hover {
+  color: transparent;
+}
