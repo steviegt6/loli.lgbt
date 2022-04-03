@@ -3,17 +3,26 @@
 
 // Style components for the index page.
 
-.urlFormInput {
-  margin-bottom: 10px;
-  width: 350px;
-  height: 50px;
+$content-width: 350px;
+
+@mixin form-element {
   color: white;
   background-color: $input-background-color;
+
   border: 1px solid $input-border-color;
-  border-radius: 15px;
   outline: 0;
+
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.urlFormInput {
+  @include form-element;
+
+  margin-bottom: 10px;
+  width: $content-width;
+  height: 50px;
+  border-radius: 15px;
 
   transition: all ease-in-out 0.3s;
 }
@@ -22,7 +31,7 @@
   margin: 5px;
 
   // 10 pixel difference
-  width: 340px;
+  width: calc($content-width - 10px);
   height: 40px;
 }
 
@@ -32,27 +41,22 @@
   background-clip: padding-box;
 
   border-radius: 15px;
-  width: 350px;
+  width: $content-width;
   height: 50px;
   margin-bottom: 18px;
 }
 
 .dropdownHeader {
-  background-color: transparent;
   margin-top: -2px;
   margin-bottom: 4px;
 }
 
 .dropdown {
-  width: 170px;
+  @include form-element;
+
+  width: calc(($content-width / 2) - 5px);
   height: 35px;
-  color: white;
-  background-color: $input-background-color;
-  border: 1px solid $input-border-color;
   border-radius: 6px;
-  outline: 0;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .info {
