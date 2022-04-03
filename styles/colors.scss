@@ -22,3 +22,8 @@ $input-border-color: #2f2f2f;
 
 $unhovered-info-text: #454545;
 $hovered-info-text: #959595;
+
+// The maximum width of the main body content. Used if the viewport width exceeds this amount.
+$max-content-width: 550px;
+$viewport-width: 80vw;
+$expected-width: calc(min($viewport-width, $max-content-width));

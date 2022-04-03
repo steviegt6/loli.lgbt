@@ -3,8 +3,6 @@
 
 // Style components for the index page.
 
-$content-width: 350px;
-
 @mixin form-element {
   color: white;
   background-color: $input-background-color;
@@ -20,7 +18,7 @@ $content-width: 350px;
   @include form-element;
 
   margin-bottom: 10px;
-  width: $content-width;
+  width: $expected-width;
   height: 50px;
   border-radius: 15px;
 
@@ -31,7 +29,7 @@ $content-width: 350px;
   margin: 5px;
 
   // 10 pixel difference
-  width: calc($content-width - 10px);
+  width: calc($expected-width - 10px);
   height: 40px;
 }
 
@@ -41,7 +39,7 @@ $content-width: 350px;
   background-clip: padding-box;
 
   border-radius: 15px;
-  width: $content-width;
+  width: $expected-width;
   height: 50px;
   margin-bottom: 18px;
 }
@@ -54,7 +52,7 @@ $content-width: 350px;
 .dropdown {
   @include form-element;
 
-  width: calc(($content-width / 2) - 5px);
+  width: calc(($expected-width / 2) - 5px);
   height: 35px;
   border-radius: 6px;
 }
