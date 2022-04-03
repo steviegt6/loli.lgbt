@@ -1,0 +1,23 @@
+$text-color: white;
+$background-color: #090909;
+
+// The color used for stickied displays, such as the header and footer.
+$stickied-color: #121212;
+
+// The gradient used for rainbow background rendering (rainbow text, borders, etc.).
+$rainbow-gradient: linear-gradient(
+  to right,
+  red,
+  orange,
+  yellow,
+  lime,
+  cyan,
+  violet
+);
+
+// Colors used for text input and dropdown components.
+$input-background-color: #181818;
+$input-border-color: #2f2f2f;
+
+$unhovered-info-text: #454545;
+$hovered-info-text: #959595;
