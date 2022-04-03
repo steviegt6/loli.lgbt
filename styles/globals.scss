@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
 @import "colors";
+@import "mixins";
 
 // TODO: Rushed project, clean up (S)CCS some time.
 
@@ -15,12 +16,9 @@ body {
 }
 
 a {
-  background: $rainbow-gradient;
-  -webkit-background-clip: text;
-  background-clip: text;
+  @include rainbow-text;
+
   color: paleturquoise;
-  animation: rainbow 2s ease-in-out infinite;
-  background-size: 400% 100%;
   text-decoration: none;
 
   // TODO: Since we set color to transparent in :hover, it flashes when it resets. :(
@@ -70,12 +68,7 @@ a:hover {
 }
 
 .lgbt-animated {
-  background: $rainbow-gradient;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: rainbow 6s ease-in-out infinite;
-  background-size: 400% 100%;
+  @include rainbow-text;
 }
 
 .content {
@@ -110,14 +103,11 @@ a:hover {
 }
 
 .url-form-input-outer {
+  @include rainbow-text;
+  
   border-radius: 15px;
   width: 350px;
   height: 50px;
-  background: $rainbow-gradient;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  animation: rainbow 4s ease-in-out infinite;
-  background-size: 400% 100%;
   margin-bottom: 18px;
 }
 
@@ -165,14 +155,4 @@ a:hover {
 
 .float-right {
   float: right;
-}
-
-@keyframes rainbow {
-  0%,
-  100% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 100% 0;
-  }
 }
