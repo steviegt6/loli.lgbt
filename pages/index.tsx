@@ -79,6 +79,11 @@ function UrlMessage({
           <p
             suppressHydrationWarning={true}
             className={styles.linkText + " lgbt-animated"}
+            onClick={() => {
+              navigator.clipboard.writeText(
+                (hostname || (hostname = window.location.hostname)) + "/" + url
+              );
+            }}
           >
             {(hostname || (hostname = window.location.hostname)) + "/" + url}
           </p>

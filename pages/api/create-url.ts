@@ -48,17 +48,14 @@ export default function handler(
 
   try {
     urlReq = JSON.parse(req.body);
-  }
-  catch {
+  } catch {
     urlReq = req.body as UrlRequest;
   }
 
   var url: string = generateUrl(urlReq.urlType);
 
   if (urlReq.urlType === "Custom" && urlReq.customUrl === "") {
-    res
-      .status(400)
-      .json({ message: "Custom URL cannot be empty.", url: "" });
+    res.status(400).json({ message: "Custom URL cannot be empty.", url: "" });
     return;
   }
 
