@@ -32,4 +32,12 @@ export function getServerSideProps(context: NextPageContext) {
   };
 }
 
+export async function getStaticProps() {
+  return {
+    props: {
+    },
+    revalidate: 1,
+  };
+}
+
 export default UrlRedirect;
