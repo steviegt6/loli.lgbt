@@ -1,12 +1,13 @@
-import type { NextPage } from "next";
-import dynamic from "next/dynamic";
+import type { NextPage, NextPageContext } from "next";
 import { useRouter } from "next/router";
-import { FormEvent, useEffect } from "react";
+import { FormEvent } from "react";
 import Layout from "../components/layout";
 import styles from "../styles/index/index.module.scss";
 import { UrlResponse } from "./api/create-url";
 
 type QueryRes = string | string[] | undefined;
+
+var hostname: string | undefined = undefined;
 
 const Home: NextPage = () => {
   const { query } = useRouter();
@@ -69,7 +70,7 @@ function UrlMessage({
 }) {
   return (
     <div suppressHydrationWarning={true} className="flex">
-      {showUrl && typeof window !== "undefined" ? (
+      {showUrl ? (
         <>
           <p suppressHydrationWarning={true} className={styles.resultText}>
             Your shortened URL is available
@@ -79,7 +80,7 @@ function UrlMessage({
             suppressHydrationWarning={true}
             className={styles.linkText + " lgbt-animated"}
           >
-            {window.location.hostname + "/" + url}
+            {(hostname || (hostname = window.location.hostname)) + "/" + url}
           </p>
         </>
       ) : (
@@ -188,6 +189,14 @@ function UrlForm() {
       </p>
     </form>
   );
+}
+
+export async function getServerSideProps(context: NextPageContext) {
+  hostname = context.req?.headers?.host;
+
+  return {
+    props: {},
+  };
 }
 
 export default Home;
