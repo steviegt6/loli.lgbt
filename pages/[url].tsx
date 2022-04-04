@@ -28,6 +28,7 @@ export function getServerSideProps(context: NextPageContext) {
 
   return {
     props: {},
+    revalidate: 1,
   };
 }
 
