@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { NextPage, NextPageContext } from "next";
 import Layout from "../components/layout";
 import { store } from "./api/create-url";
 
@@ -12,9 +12,8 @@ const UrlRedirect: NextPage = () => {
   );
 };
 
-// @ts-ignore
-export function getServerSideProps({ req }) {
-  const urlReq = req.url.substring(1);
+export function getServerSideProps(context: NextPageContext}) {
+  const urlReq = context.req?.url?.substring(1);
 
   if (store.urls.some((url) => url.shortenedUrl === urlReq)) {
     var storedUrl = store.urls.find((url) => url.shortenedUrl === urlReq);
