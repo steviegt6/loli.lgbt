@@ -68,13 +68,26 @@ function UrlMessage({
   message: string;
 }) {
   return (
-    <p suppressHydrationWarning={true}>
-      {showUrl && typeof window !== "undefined"
-        ? `Your shortened URL is available @ ${
-            window.location.hostname + "/" + url
-          }`
-        : message}
-    </p>
+    <div suppressHydrationWarning={true} className="flex">
+      {showUrl && typeof window !== "undefined" ? (
+        <>
+          <p suppressHydrationWarning={true} className={styles.resultText}>
+            Your shortened URL is available
+          </p>
+          <p className={styles.atText}>&nbsp;@&nbsp;</p>
+          <p
+            suppressHydrationWarning={true}
+            className={styles.linkText + " lgbt-animated"}
+          >
+            {window.location.hostname + "/" + url}
+          </p>
+        </>
+      ) : (
+        <p suppressHydrationWarning={true} className={styles.resultText}>
+          {message}
+        </p>
+      )}
+    </div>
   );
 }
 
