@@ -27,9 +27,17 @@ const Middleware = async (req: NextRequest) => {
     return NextResponse.next();
   }
 
-  var custom = await res.json();
-  
-  return NextResponse.redirect(custom.url);
+  var custom: CustomUrl;
+  var txt = await res.text();
+
+  try {
+      custom = JSON.parse(txt);
+      return NextResponse.redirect(custom.url);
+  }
+  catch {
+      console.log(txt);
+      return NextResponse.next();
+  }
 };
 
 export default Middleware;
