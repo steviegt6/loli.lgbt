@@ -73,7 +73,7 @@ function UrlMessage({
       {showUrl ? (
         <>
           <p suppressHydrationWarning={true} className={styles.resultText}>
-            Your shortened URL is available
+            URL
           </p>
           <p className={styles.atText}>&nbsp;@&nbsp;</p>
           <p
