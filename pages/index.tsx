@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
-import { FormEvent } from "react";
+import { FormEvent, useEffect } from "react";
 import Layout from "../components/layout";
 import styles from "../styles/index/index.module.scss";
 import { UrlResponse } from "./api/create-url";
@@ -9,7 +10,6 @@ type QueryRes = string | string[] | undefined;
 
 const Home: NextPage = () => {
   const { query } = useRouter();
-  console.log(query);
   // Use <Layout> to provide a consistent site format.
   return (
     <Layout>
@@ -45,7 +45,7 @@ function ResMessage({
   }
 
   return (
-    <div>
+    <div suppressHydrationWarning={true}>
       <h1 className={theCode == "200" ? styles.success : styles.failure}>
         {theCode == "200" ? "Success!" : `Error: ${theCode}`}
       </h1>
@@ -67,15 +67,15 @@ function UrlMessage({
   url: string | undefined;
   message: string;
 }) {
-  if (showUrl && typeof window !== "undefined") {
-    return (
-      <p suppressHydrationWarning={true}>
-        Your shortened URL is available @ {window.location.hostname + "/" + url}
-      </p>
-    );
-  }
-
-  return <p className={styles.failure}>{message}</p>;
+  return (
+    <p suppressHydrationWarning={true}>
+      {showUrl && typeof window !== "undefined"
+        ? `Your shortened URL is available @ ${
+            window.location.hostname + "/" + url
+          }`
+        : message}
+    </p>
+  );
 }
 
 function UrlForm() {
