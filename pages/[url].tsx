@@ -1,7 +1,5 @@
 import { NextPage } from "next";
-import { NextURL } from "next/dist/server/web/next-url";
-import { parseNextUrl } from "next/dist/shared/lib/router/utils/parse-next-url";
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import Layout from "../components/layout";
 import { store } from "./api/create-url";
 
