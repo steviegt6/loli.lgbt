@@ -33,6 +33,7 @@ export default function handler(
 
   if (store.urls.some((url) => url.shortenedUrl === short)) {
     res.status(200).json({ url: store.urls.find((url) => url.shortenedUrl === short)!.originalUrl });
+    return;
   }
 
   // I mean, it's *teeeechnically* a 404.
