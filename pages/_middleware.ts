@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { websiteUrl } from "../components/config";
 import { CustomUrl } from "./api/get-url";
 
-const blacklist = ["/"];
+const blacklist = ["/", "/api/get-url", "/api/create-url"];
+const websiteUrl = "http://localhost:3006";
 
 const Middleware = async (req: NextRequest) => {
   if (!process.browser) {
@@ -28,13 +28,8 @@ const Middleware = async (req: NextRequest) => {
   }
 
   var custom: CustomUrl = await res.json();
-
-  try {
-    return NextResponse.redirect(custom.url);
-  } catch {
-    // TODO: Gross.
-    return NextResponse.redirect("https://" + custom.url);
-  }
+  
+  return NextResponse.redirect(custom.url);
 };
 
 export default Middleware;
