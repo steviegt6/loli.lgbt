@@ -4,7 +4,9 @@ import { CustomUrl } from "./api/get-url";
 const blacklist = ["/"];
 
 const Middleware = async (req: NextRequest) => {
-  console.log(req.nextUrl);
+  if (!process.browser) {
+    return NextResponse.next();
+  }
 
   if (blacklist.includes(req.nextUrl.pathname)) {
     return NextResponse.next();
