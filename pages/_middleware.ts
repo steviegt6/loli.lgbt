@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { url } from "../components/config";
+import { websiteUrl } from "../components/config";
 import { CustomUrl } from "./api/get-url";
 
 const blacklist = ["/"];
@@ -13,7 +13,7 @@ const Middleware = async (req: NextRequest) => {
     return NextResponse.next();
   }
 
-  var res = await fetch(url + "/api/get-url", {
+  var res = await fetch(websiteUrl + "/api/get-url", {
     body: JSON.stringify({
       shortened: req.nextUrl.pathname.substring(1),
     }),
@@ -29,7 +29,12 @@ const Middleware = async (req: NextRequest) => {
 
   var custom: CustomUrl = await res.json();
 
-  return NextResponse.redirect(custom.url);
+  try {
+    return NextResponse.redirect(custom.url);
+  } catch {
+    // TODO: Gross.
+    return NextResponse.redirect("https://" + custom.url);
+  }
 };
 
 export default Middleware;
