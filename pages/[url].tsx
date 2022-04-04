@@ -27,10 +27,7 @@ export function getServerSideProps(context: NextPageContext) {
   }
 
   return {
-    props: {
-        destintion: "index",
-        permanent: false
-    },
+    props: {},
   };
 }
 
