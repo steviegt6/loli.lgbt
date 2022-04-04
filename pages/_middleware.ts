@@ -27,8 +27,8 @@ const Middleware = async (req: NextRequest) => {
     return NextResponse.next();
   }
 
-  var custom: CustomUrl = await res.json();
-  console.log(custom);
+  var custom = await res.json();
+  
   return NextResponse.redirect(custom.url);
 };
 
