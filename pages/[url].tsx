@@ -12,7 +12,7 @@ const UrlRedirect: NextPage = () => {
   );
 };
 
-export function getServerSideProps(context: NextPageContext}) {
+export function getServerSideProps(context: NextPageContext) {
   const urlReq = context.req?.url?.substring(1);
 
   if (store.urls.some((url) => url.shortenedUrl === urlReq)) {
