@@ -16,7 +16,7 @@ type UrlRequest = {
   customUrl: string;
 };
 
-type Url = {
+export type UrlResponse = {
   url: string;
   message: string;
 };
@@ -35,7 +35,7 @@ export const store: Store = initializeStore();
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Url>
+  res: NextApiResponse<UrlResponse>
 ) {
   if (req.method !== "POST") {
     res
@@ -44,7 +44,15 @@ export default function handler(
     return;
   }
 
-  var urlReq: UrlRequest = JSON.parse(req.body);
+  var urlReq: UrlRequest;
+
+  try {
+    urlReq = JSON.parse(req.body);
+  }
+  catch {
+    urlReq = req.body as UrlRequest;
+  }
+
   var url: string = generateUrl(urlReq.urlType);
 
   if (urlReq.urlType === "Custom" && urlReq.customUrl === "") {

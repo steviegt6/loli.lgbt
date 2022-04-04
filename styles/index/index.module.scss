@@ -25,6 +25,17 @@
   transition: all ease-in-out 0.3s;
 }
 
+.urlSubmitButton {
+  @include form-element;
+  
+  margin-bottom: 20px;
+  width: 120px;
+  height: 30px;
+  border-radius: 6px;
+
+  color: all ease-in-out 0.3s;
+}
+
 .urlFormInput:focus {
   margin: 5px;
 
