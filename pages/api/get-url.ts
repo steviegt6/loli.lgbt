@@ -29,7 +29,6 @@ export default function handler(
   }
 
   const short = urlReq.shortened;
-  var storedUrl: string | undefined = undefined;
 
   if (store.urls.some((url) => url.shortenedUrl === short)) {
     res.status(200).json({ url: store.urls.find((url) => url.shortenedUrl === short)!.originalUrl });
