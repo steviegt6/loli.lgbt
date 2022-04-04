@@ -36,3 +36,4 @@ yarn-error.log*
 
 # loli
 private/
+components/config.ts

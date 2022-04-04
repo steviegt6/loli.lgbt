@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { url } from "../components/config";
 import { CustomUrl } from "./api/get-url";
 
 const blacklist = ["/"];
@@ -12,7 +13,7 @@ const Middleware = async (req: NextRequest) => {
     return NextResponse.next();
   }
 
-  var res = await fetch(req.nextUrl.origin + "/api/get-url", {
+  var res = await fetch(url + "/api/get-url", {
     body: JSON.stringify({
       shortened: req.nextUrl.pathname.substring(1),
     }),
